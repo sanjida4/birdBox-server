@@ -38,8 +38,8 @@ client.connect(err => {
     })
   })
   
-  app.get('/product/:key', (req, res) => {
-    productsCollection.find({key: req.params.key})
+  app.get('/product/:_id', (req, res) => {
+    productsCollection.find({key: req.params._id})
     .toArray( (err, documents) => {
         res.send(documents[0]);
     })
